@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.TaskDetailFragment">
+
+    <TextView
+        android:id="@+id/status_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/status_label"
+        app:layout_constraintStart_toStartOf="@+id/priority_label"
+        app:layout_constraintTop_toTopOf="@+id/status_group" />
+
+    <Button
+        android:id="@+id/delete_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/delete_task"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_group" />
+
+    <View
+        android:id="@+id/task_priority_view"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:background="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@+id/task_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/task_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="@string/enter_task_title"
+        android:inputType="text"
+        android:maxLength="50"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/task_priority_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/task_detail"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/enter_task_detail"
+        android:inputType="text|textMultiLine"
+        android:maxLength="150"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/task_title"
+        app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+    <Button
+        android:id="@+id/save_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/save_task"
+        app:layout_constraintStart_toStartOf="@+id/status_label"
+        app:layout_constraintTop_toBottomOf="@+id/status_group" />
+
+    <TextView
+        android:id="@+id/priority_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/priority"
+        app:layout_constraintStart_toStartOf="@+id/task_detail"
+        app:layout_constraintTop_toBottomOf="@+id/task_detail" />
+
+    <Spinner
+        android:id="@+id/task_priority"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/priority_label"
+        app:layout_constraintTop_toBottomOf="@+id/task_detail" />
+
+    <RadioGroup
+        android:id="@+id/status_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/status_label"
+        app:layout_constraintTop_toBottomOf="@+id/task_priority">
+
+        <RadioButton
+            android:id="@+id/status_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/status_open" />
+
+        <RadioButton
+            android:id="@+id/status_closed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/status_closed" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
